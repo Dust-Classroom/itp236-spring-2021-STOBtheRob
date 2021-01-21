@@ -5,7 +5,7 @@
 #define Purchasing
 #define EDI
 #define ETL
-#undef Shapes
+//#undef Shapes
 #undef EmployeePay
 #undef Debugging
 #undef StateCollection
@@ -21,7 +21,7 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            WriteLine("<----- Student: Your Name ----->");
+            WriteLine("<----- Student: Robert Steele ----->");
             #region Shapes
 #if Shapes
             Shapes.TestShapes.Test();

@@ -1,8 +1,8 @@
---< YOUR NAME GOES HERE >--
+--< Robert Steele >--
 Spring 2021
 
---< SUBMISSION DATE 1 GOES HERE >--
---< Assignment Name 1 GOES HERE >--
+--< Submitted Assignment 1 January 20th, 2021 >--
+--< Assignment #1: Shapes >--
 
 --< SUBMISSION DATE 2 GOES HERE >--
 --< Assignment Name 2 GOES HERE >--

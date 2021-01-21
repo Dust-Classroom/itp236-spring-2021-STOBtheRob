@@ -1,5 +1,5 @@
 ﻿#define stub
-#undef  stub
+//#undef  stub
 using static System.Console;
 
 namespace Shapes
