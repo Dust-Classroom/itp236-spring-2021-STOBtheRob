@@ -3,3 +3,4 @@ C:\Users\Bobby\Source\Repos\Dust-Classroom\itp236-spring-2021-STOBtheRob\ITP236S
 C:\Users\Bobby\Source\Repos\Dust-Classroom\itp236-spring-2021-STOBtheRob\ITP236Spring2021Student\EmployeePay\obj\Debug\EmployeePay.csproj.CoreCompileInputs.cache
 C:\Users\Bobby\Source\Repos\Dust-Classroom\itp236-spring-2021-STOBtheRob\ITP236Spring2021Student\EmployeePay\obj\Debug\EmployeePay.dll
 C:\Users\Bobby\Source\Repos\Dust-Classroom\itp236-spring-2021-STOBtheRob\ITP236Spring2021Student\EmployeePay\obj\Debug\EmployeePay.pdb
+C:\Users\Bobby\Source\Repos\Dust-Classroom\itp236-spring-2021-STOBtheRob\ITP236Spring2021Student\EmployeePay\obj\Debug\EmployeePay.csprojAssemblyReference.cache

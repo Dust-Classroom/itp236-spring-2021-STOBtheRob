@@ -5,8 +5,8 @@
 #define Purchasing
 #define EDI
 #define ETL
-//#undef Shapes
-#undef EmployeePay
+#undef Shapes
+//#undef EmployeePay
 #undef Debugging
 #undef StateCollection
 #undef Purchasing

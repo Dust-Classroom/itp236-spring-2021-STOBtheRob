@@ -4,7 +4,7 @@ Spring 2021
 --< Submitted Assignment 1 January 20th, 2021 >--
 --< Assignment #1: Shapes >--
 
---< SUBMISSION DATE 2 GOES HERE >--
---< Assignment Name 2 GOES HERE >--
+--< Submitted Assignment 2 January 27th, 2021 >--
+--< Assignment #2: Employee Pay >--
 
 etc.
