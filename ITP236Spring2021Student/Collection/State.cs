@@ -19,7 +19,7 @@ namespace StateCollection
             Capitol = capitol;
             Population = population;
         }
-        private static State[] states = {
+        public static State[] states = {
             new State("VA", "Virginia", "Richmond", 8535519),
             new State("AL", "Alabama", "Montgomery", 4903185),
             new State("MS", "Mississippi", "Jackson", 2976149),

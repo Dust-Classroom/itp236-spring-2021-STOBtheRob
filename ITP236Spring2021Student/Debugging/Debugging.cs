@@ -14,7 +14,7 @@ namespace Debugging
 
         public static void Test()
         {
-            Breakpoint();
+            //Breakpoint();
             //MoreBreakpoint();
             //StepInStepOver();
             //LocalsWindow();
@@ -35,7 +35,7 @@ namespace Debugging
                  * The line is highlighted in red
                  */
                 total += numbers[i];        //--< Pres F10 to execute this line of code <<<
-                average = total / i + 1;    //--< Notice in the "Locals" window below that toal changes to red and the value to 10 <<<
+                average = total / (i + 1);    //--< Notice in the "Locals" window below that toal changes to red and the value to 10 <<<
                 /* Press F5 to Continue executing, or click the "Continue" button above */
                 /* Note that an exception is thrown on the "average = ..." line of code 
                  * Examine the code by hovering your mouse over the variable "i". It is 0.
