@@ -50,16 +50,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ITP236EF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrder.cs">
+      <DependentUpon>PurchasingModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Purchasing.cs" />
+    <Compile Include="PurchasingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchasingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchasingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchasingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SatusIDEnum.cs">
+      <DependentUpon>PurchasingModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Test.cs" />
+    <Compile Include="Vendor.cs">
+      <DependentUpon>PurchasingModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="PurchasingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PurchasingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PurchasingModel.edmx.diagram">
+      <DependentUpon>PurchasingModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentation\Change Log.txt" />
+    <Content Include="PurchasingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PurchasingModel.edmx</DependentUpon>
+      <LastGenOutput>PurchasingModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PurchasingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PurchasingModel.edmx</DependentUpon>
+      <LastGenOutput>PurchasingModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

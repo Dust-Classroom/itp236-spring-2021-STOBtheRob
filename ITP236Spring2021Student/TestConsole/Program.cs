@@ -8,8 +8,8 @@
 #undef Shapes
 #undef EmployeePay
 #undef Debugging
-//#undef StateCollection
-#undef Purchasing
+#undef StateCollection
+//#undef Purchasing
 #undef EDI
 #undef ETL
 
