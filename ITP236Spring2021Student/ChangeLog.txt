@@ -10,4 +10,9 @@ Spring 2021
 --< Submitted Assignment 3 February 9th, 2021 >--
 --< Assignment #3: State Collections >--
 
+--< Submitted Assignment 4 February 10th, 2021 >--
+--< Assignment #4: Purchasing/ EF Part 1 >--
+
+--< Submitted Assignment 5 February 23rd, 2021 >--
+--< Assignment #5: Purchasing/ EF Part 2 >--
 etc.

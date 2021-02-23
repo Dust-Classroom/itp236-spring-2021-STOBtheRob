@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PurchasingEntitiesStoreContainer" CdmEntityContainer="PurchaserEntities">
+    <EntitySetMapping Name="PurchaseOrders">
+      <EntityTypeMapping TypeName="PurchasingEntities.PurchaseOrder">
+        <MappingFragment StoreEntitySet="PurchaseOrder">
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="PODate" ColumnName="PODate" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+          <ScalarProperty Name="PurchaseOrderStatusID" ColumnName="PurchaseOrderStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="PurchasingEntities.Vendor">
+        <MappingFragment StoreEntitySet="Vendor">
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parts">
+      <EntityTypeMapping TypeName="PurchasingEntities.Part">
+        <MappingFragment StoreEntitySet="Part">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TerminationDate" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+          <ScalarProperty Name="QuantityOnHand" ColumnName="QuantityOnHand" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PartID" ColumnName="PartID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrderParts">
+      <EntityTypeMapping TypeName="PurchasingEntities.PurchaseOrderPart">
+        <MappingFragment StoreEntitySet="PurchaseOrderPart">
+          <ScalarProperty Name="ExtendedCost" ColumnName="ExtendedCost" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PartId" ColumnName="PartId" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="PurchaseOrderPartId" ColumnName="PurchaseOrderPartId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receipts">
+      <EntityTypeMapping TypeName="PurchasingEntities.Receipt">
+        <MappingFragment StoreEntitySet="Receipt">
+          <ScalarProperty Name="PurchaseOrderPartId" ColumnName="PurchaseOrderPartId" />
+          <ScalarProperty Name="ShippingAndHandling" ColumnName="ShippingAndHandling" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+          <ScalarProperty Name="ReceiptID" ColumnName="ReceiptID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spoilages">
+      <EntityTypeMapping TypeName="PurchasingEntities.Spoilage">
+        <MappingFragment StoreEntitySet="Spoilage">
+          <ScalarProperty Name="ExtendedCost" ColumnName="ExtendedCost" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PartID" ColumnName="PartID" />
+          <ScalarProperty Name="SpoilageDate" ColumnName="SpoilageDate" />
+          <ScalarProperty Name="SpoilageID" ColumnName="SpoilageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

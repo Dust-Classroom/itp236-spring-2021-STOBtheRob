@@ -12,22 +12,25 @@ namespace Purchasing
     using System;
     using System.Collections.Generic;
     
-    public partial class PurchaseOrder
+    public partial class Part
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PurchaseOrder()
+        public Part()
         {
             this.PurchaseOrderParts = new HashSet<PurchaseOrderPart>();
+            this.Spoilages = new HashSet<Spoilage>();
         }
     
-        public int PurchaseOrderId { get; set; }
-        public System.DateTime PODate { get; set; }
-        public int VendorId { get; set; }
-        public Nullable<System.DateTime> ReceivedDate { get; set; }
-        public Nullable<SatusIDEnum> PurchaseOrderStatusID { get; set; }
+        public int PartID { get; set; }
+        public string Name { get; set; }
+        public int QuantityOnHand { get; set; }
+        public decimal CurrentValue { get; set; }
+        public Nullable<System.DateTime> TerminationDate { get; set; }
+        public Nullable<decimal> Price { get; set; }
     
-        public virtual Vendor Vendor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseOrderPart> PurchaseOrderParts { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Spoilage> Spoilages { get; set; }
     }
 }

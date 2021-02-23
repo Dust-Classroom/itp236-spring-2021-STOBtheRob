@@ -27,5 +27,9 @@ namespace Purchasing
     
         public virtual DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public virtual DbSet<Vendor> Vendors { get; set; }
+        public virtual DbSet<Part> Parts { get; set; }
+        public virtual DbSet<PurchaseOrderPart> PurchaseOrderParts { get; set; }
+        public virtual DbSet<Receipt> Receipts { get; set; }
+        public virtual DbSet<Spoilage> Spoilages { get; set; }
     }
 }

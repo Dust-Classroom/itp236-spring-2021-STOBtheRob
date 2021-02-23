@@ -5,7 +5,7 @@
 #define Linq2
 #define Project 
 #undef  EfAssignment1
-#undef  EfAssignment2
+//#undef  EfAssignment2
 #undef  EfAssignment3
 #undef  Linq1
 #undef  Linq2
@@ -40,7 +40,28 @@ namespace Purchasing
         static void EfAssignment2()
         {
 #if EfAssignment2
-            
+           void UpdateVendor()
+           {
+                using (var db = new PurchaserEntities())
+                {
+                    var vend = new Vendor()
+                    {
+                        Name = "Fairy Dust"
+                    };
+
+                    db.Vendors.Add(vend);
+
+                    db.SaveChanges();
+
+                    vend = db.Vendors.Find(28);
+                    db.Vendors.Remove(vend);
+
+                    db.SaveChanges();
+
+                }
+           }
+
+            UpdateVendor();
 #endif
         }
         static void EfAssignment3()

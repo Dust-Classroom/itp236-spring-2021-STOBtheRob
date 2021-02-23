@@ -12,22 +12,24 @@ namespace Purchasing
     using System;
     using System.Collections.Generic;
     
-    public partial class PurchaseOrder
+    public partial class PurchaseOrderPart
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PurchaseOrder()
+        public PurchaseOrderPart()
         {
-            this.PurchaseOrderParts = new HashSet<PurchaseOrderPart>();
+            this.Receipts = new HashSet<Receipt>();
         }
     
+        public int PurchaseOrderPartId { get; set; }
         public int PurchaseOrderId { get; set; }
-        public System.DateTime PODate { get; set; }
-        public int VendorId { get; set; }
-        public Nullable<System.DateTime> ReceivedDate { get; set; }
-        public Nullable<SatusIDEnum> PurchaseOrderStatusID { get; set; }
+        public int PartId { get; set; }
+        public int Quantity { get; set; }
+        public Nullable<decimal> Cost { get; set; }
+        public Nullable<decimal> ExtendedCost { get; set; }
     
-        public virtual Vendor Vendor { get; set; }
+        public virtual Part Part { get; set; }
+        public virtual PurchaseOrder PurchaseOrder { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PurchaseOrderPart> PurchaseOrderParts { get; set; }
+        public virtual ICollection<Receipt> Receipts { get; set; }
     }
 }
