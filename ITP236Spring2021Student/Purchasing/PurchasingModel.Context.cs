@@ -12,6 +12,8 @@ namespace Purchasing
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class PurchaserEntities : DbContext
     {
@@ -31,5 +33,35 @@ namespace Purchasing
         public virtual DbSet<PurchaseOrderPart> PurchaseOrderParts { get; set; }
         public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<Spoilage> Spoilages { get; set; }
+        public virtual DbSet<PoSummary> PoSummaries { get; set; }
+    
+        [DbFunction("PurchaserEntities", "PoDetail")]
+        public virtual IQueryable<PoDetail_Result> PoDetail(Nullable<int> purchaseOrderId)
+        {
+            var purchaseOrderIdParameter = purchaseOrderId.HasValue ?
+                new ObjectParameter("PurchaseOrderId", purchaseOrderId) :
+                new ObjectParameter("PurchaseOrderId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<PoDetail_Result>("[PurchaserEntities].[PoDetail](@PurchaseOrderId)", purchaseOrderIdParameter);
+        }
+    
+        [DbFunction("PurchaserEntities", "VendorPurchase")]
+        public virtual IQueryable<VendorPurchase_Result> VendorPurchase(Nullable<int> vendorId)
+        {
+            var vendorIdParameter = vendorId.HasValue ?
+                new ObjectParameter("VendorId", vendorId) :
+                new ObjectParameter("VendorId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<VendorPurchase_Result>("[PurchaserEntities].[VendorPurchase](@VendorId)", vendorIdParameter);
+        }
+    
+        public virtual int POP(Nullable<int> purchaseOrderId, ObjectParameter amount)
+        {
+            var purchaseOrderIdParameter = purchaseOrderId.HasValue ?
+                new ObjectParameter("PurchaseOrderId", purchaseOrderId) :
+                new ObjectParameter("PurchaseOrderId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("POP", purchaseOrderIdParameter, amount);
+        }
     }
 }

@@ -15,4 +15,6 @@ Spring 2021
 
 --< Submitted Assignment 5 February 23rd, 2021 >--
 --< Assignment #5: Purchasing/ EF Part 2 >--
-etc.
+
+--< Submitted Assignment 6 March 2nd, 2021 >--
+--< Assignment #6: Purchasing/ EF Part 3 >--

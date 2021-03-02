@@ -5,3 +5,7 @@ Added PurchaseModel.edmx, added enum to PurchaseOrderStatusID
 Student: Robert Steele
 Last Changed: 2/17/2021
 Added Part, PurchaseOrderPart, Receipt, and Spoilage tables. Added "Fairy Dust" Vendor, Updated Changes, Removed "New Dust" Vendor, Saved Changes.
+
+Student: Robert Steele
+Last Changed 3/2/2021
+Used Views, Table-valued Functions, and Stored Procedures to view and update data on the tables. Saved Changes.

@@ -11,6 +11,7 @@
     <Property Name="PurchaseOrderStatusID" Type="PurchasingEntities.SatusIDEnum" />
     <NavigationProperty Name="Vendor" Relationship="Self.FK_PurchaseOrder_Vendor" FromRole="PurchaseOrder" ToRole="Vendor" />
     <NavigationProperty Name="PurchaseOrderParts" Relationship="PurchasingEntities.FK_PurchaseOrderPart_PurchaseOrder" FromRole="PurchaseOrder" ToRole="PurchaseOrderPart" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
   <EntityType Name="Vendor">
     <Key>
@@ -59,6 +60,17 @@
       <End Role="PurchaseOrderPart" EntitySet="PurchaseOrderParts" />
       <End Role="Receipt" EntitySet="Receipts" />
     </AssociationSet>
+    <EntitySet Name="PoSummaries" EntityType="PurchasingEntities.PoSummary" />
+    <FunctionImport Name="PoDetail" IsComposable="true" ReturnType="Collection(PurchasingEntities.PoDetail_Result)">
+      <Parameter Name="PurchaseOrderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="VendorPurchase" IsComposable="true" ReturnType="Collection(PurchasingEntities.VendorPurchase_Result)">
+      <Parameter Name="VendorId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="POP">
+      <Parameter Name="PurchaseOrderId" Mode="In" Type="Int32" />
+      <Parameter Name="Amount" Mode="InOut" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
   <EnumType Name="SatusIDEnum">
     <Member Name="Open" Value="1" />
@@ -164,4 +176,28 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="PoSummary">
+    <Key>
+      <PropertyRef Name="PurchaseOrderId" />
+      <PropertyRef Name="PODate" />
+      <PropertyRef Name="Vendor" />
+    </Key>
+    <Property Name="PurchaseOrderId" Type="Int32" Nullable="false" />
+    <Property Name="PODate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Vendor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <ComplexType Name="PoDetail_Result">
+    <Property Type="Int32" Name="PurchaseOrderId" Nullable="false" />
+    <Property Type="DateTime" Name="PODate" Nullable="false" Precision="10" />
+    <Property Type="String" Name="Vendor" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Part" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <Property Type="Decimal" Name="Value" Nullable="true" Precision="19" Scale="4" />
+  </ComplexType>
+  <ComplexType Name="VendorPurchase_Result">
+    <Property Type="Int32" Name="VendorId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="TotalPurchases" Nullable="true" Precision="19" Scale="4" />
+  </ComplexType>
 </Schema>

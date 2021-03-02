@@ -3,10 +3,12 @@
 #define EfAssignment3
 #define Linq1
 #define Linq2
-#define Project 
+#define Project
+#define ViewSprocFunction
 #undef  EfAssignment1
-//#undef  EfAssignment2
-#undef  EfAssignment3
+#undef  EfAssignment2
+//#undef ViewSprocFunction
+//#undef  EfAssignment3
 #undef  Linq1
 #undef  Linq2
 #undef  Project
@@ -67,9 +69,63 @@ namespace Purchasing
         static void EfAssignment3()
         {
 #if EfAssignment3
-            
+            using (var db = new PurchaserEntities())
+            {
+                try
+                {
+                    ViewsSprocsFunctions(db);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"{ex.Message}");
+                }
+            }
+
+        }
+        private static void ViewsSprocsFunctions(PurchaserEntities db)
+        {
+#if ViewSprocFunction
+
+            string seperator = new string ('=', 40);
+
+            // View //       
+
+            Console.WriteLine("View:");
+
+            var summaries = db.PoSummaries.ToList();
+            foreach (var sum in summaries)
+            {
+                Console.WriteLine($"{sum.PurchaseOrderId}\t{sum.PODate}\t{sum.Vendor}\t{sum.TotalAmount:c}");
+            }
+
+            Console.WriteLine($"{seperator}");
+
+            // Table-Valued Functions //
+
+            Console.WriteLine("Table-Valued Function:");
+
+            var poDetails = db.PoDetail(1).ToList();
+            foreach (var poDetail in poDetails)
+            {
+                Console.WriteLine($"{poDetail.PurchaseOrderId}\t{poDetail.PODate}\t{poDetail.Vendor}\t{poDetail.Part}\t{poDetail.Quantity}\t{poDetail.Value}");
+            }
+
+            Console.WriteLine($"{seperator}");
+
+            // Stored Procedures //
+
+            Console.WriteLine("Stored Procedure");
+
+            var amount = new System.Data.Entity.Core.Objects.ObjectParameter("amount", typeof(decimal));
+            var pop = db.POP(1, amount);
+            Console.WriteLine($"{amount.Value:c}");
+
 #endif
         }
+#endif
+
+
+
         static void Linq1()
         {
 #if Linq1
@@ -129,7 +185,7 @@ namespace Purchasing
                 foreach (var vendor in vendors)
                     Display(vendor);
             }
-#endif 
+#endif
         }
         private static void VendorTest()
         {
@@ -208,3 +264,4 @@ namespace Purchasing
         }
     }
 }
+

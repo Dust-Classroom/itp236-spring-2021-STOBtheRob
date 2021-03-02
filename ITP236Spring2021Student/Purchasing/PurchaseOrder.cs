@@ -25,6 +25,7 @@ namespace Purchasing
         public int VendorId { get; set; }
         public Nullable<System.DateTime> ReceivedDate { get; set; }
         public Nullable<SatusIDEnum> PurchaseOrderStatusID { get; set; }
+        public Nullable<decimal> Amount { get; set; }
     
         public virtual Vendor Vendor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

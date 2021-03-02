@@ -4,6 +4,7 @@
     <EntitySetMapping Name="PurchaseOrders">
       <EntityTypeMapping TypeName="PurchasingEntities.PurchaseOrder">
         <MappingFragment StoreEntitySet="PurchaseOrder">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
           <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
           <ScalarProperty Name="PODate" ColumnName="PODate" />
           <ScalarProperty Name="VendorId" ColumnName="VendorId" />
@@ -68,5 +69,37 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PoSummaries">
+      <EntityTypeMapping TypeName="PurchasingEntities.PoSummary">
+        <MappingFragment StoreEntitySet="PoSummary">
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="PODate" ColumnName="PODate" />
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PoDetail" FunctionName="PurchasingEntities.Store.PoDetail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PurchasingEntities.PoDetail_Result">
+          <ScalarProperty Name="PurchaseOrderId" ColumnName="PurchaseOrderId" />
+          <ScalarProperty Name="PODate" ColumnName="PODate" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="Part" ColumnName="Part" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VendorPurchase" FunctionName="PurchasingEntities.Store.VendorPurchase">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PurchasingEntities.VendorPurchase_Result">
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TotalPurchases" ColumnName="TotalPurchases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="POP" FunctionName="PurchasingEntities.Store.POP" />
   </EntityContainerMapping>
 </Mapping>

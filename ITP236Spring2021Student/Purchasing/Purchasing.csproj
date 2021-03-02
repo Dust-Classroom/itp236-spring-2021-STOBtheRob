@@ -54,6 +54,12 @@
     <Compile Include="Part.cs">
       <DependentUpon>PurchasingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PoDetail_Result.cs">
+      <DependentUpon>PurchasingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoSummary.cs">
+      <DependentUpon>PurchasingModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseOrder.cs">
       <DependentUpon>PurchasingModel.tt</DependentUpon>
@@ -88,6 +94,9 @@
     </Compile>
     <Compile Include="Test.cs" />
     <Compile Include="Vendor.cs">
+      <DependentUpon>PurchasingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendorPurchase_Result.cs">
       <DependentUpon>PurchasingModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
