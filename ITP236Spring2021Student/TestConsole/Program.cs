@@ -9,8 +9,8 @@
 #undef EmployeePay
 #undef Debugging
 #undef StateCollection
-//#undef Purchasing
-#undef EDI
+#undef Purchasing
+//#undef EDI
 #undef ETL
 
 using static System.Console;
@@ -50,6 +50,7 @@ namespace TestConsole
             #region EDI
 #if EDI
             EDI.TestEDI.Test();
+            EDI.LinqExample.TestLinq();
 #endif
             #endregion
             #region ETL

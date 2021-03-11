@@ -7,8 +7,8 @@
 #define ViewSprocFunction
 #undef  EfAssignment1
 #undef  EfAssignment2
-//#undef ViewSprocFunction
-//#undef  EfAssignment3
+#undef ViewSprocFunction
+#undef  EfAssignment3
 #undef  Linq1
 #undef  Linq2
 #undef  Project
@@ -121,8 +121,9 @@ namespace Purchasing
             Console.WriteLine($"{amount.Value:c}");
 
 #endif
-        }
 #endif
+        }
+
 
 
 

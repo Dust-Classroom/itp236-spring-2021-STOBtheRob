@@ -10,3 +10,9 @@ C:\Users\rober\Source\Repos\itp236-spring-2021-STOBtheRob\ITP236Spring2021Studen
 C:\Users\rober\Source\Repos\itp236-spring-2021-STOBtheRob\ITP236Spring2021Student\Collection\obj\Debug\StateCollection.csproj.CoreCompileInputs.cache
 C:\Users\rober\Source\Repos\itp236-spring-2021-STOBtheRob\ITP236Spring2021Student\Collection\obj\Debug\Collection.dll
 C:\Users\rober\Source\Repos\itp236-spring-2021-STOBtheRob\ITP236Spring2021Student\Collection\obj\Debug\Collection.pdb
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\Collection\bin\Debug\Collection.dll
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\Collection\bin\Debug\Collection.pdb
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\Collection\obj\Debug\StateCollection.csprojAssemblyReference.cache
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\Collection\obj\Debug\StateCollection.csproj.CoreCompileInputs.cache
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\Collection\obj\Debug\Collection.dll
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\Collection\obj\Debug\Collection.pdb
