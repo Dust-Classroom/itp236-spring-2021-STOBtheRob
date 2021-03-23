@@ -1,5 +1,5 @@
 ﻿#define stub
-#undef  stub
+//#undef  stub
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +17,9 @@ namespace EDI
         delegate string Int2String(int value);
         public static void Test()
         {
-            //TestInterface();
-            //TestExtension();
-            //TestDelegate();
+            TestInterface();
+            TestExtension();
+            TestDelegate();
             //TestLinq();
             //LinqStudent();
             //LinqExample();
@@ -48,77 +48,43 @@ namespace EDI
             total += num;
         }
 
-        // 1. The old C# way //
-        foreach (var num in numbers)
-        {
-            if (num == i)
-            {
-                j = i;
-            }
-        }
-
-        // 2. Anonymous Method //
-        j = -1;
-        j = numbers.FirstOrDefault(delegate (int num) { return num == i; }); // FirstOrDefault only returns the first instance that is true.  //
-
-        // 3. Uses LINQ with an anonymous Lambda (Lambda is =>).  //
+        // Uses LINQ with an anonymous Lambda (Lambda is =>).  //
         j = -1;
         j = numbers.FirstOrDefault(num => num == i);
         // All three of these examples do the same thing.
-
-        // Old C# Way to get the total //
-        foreach (var num in numbers)
-        {
-            total += num;
-        }
-
-        // LINQ way of getting the total //
-        total = numbers.Sum(n => n);
-
-        // LINQ way of getting the highest number //
-        int max = numbers.Max();
-
-        // LINQ way of getting the lowest number //
-        int min = numbers.Min();
-
-        // LINQ way of getting the first number //
-        int first = numbers.First();
-
-        // LINQ way of getting the last number //
-        int last = numbers.Last();
-
-        // LINQ way of getting the average of an array //
-        double avg = numbers.Average();
-
-        // Only adds the numbers greater than 50 to your total //
-        total = numbers.Where(num => num > 50).Sum();
-
-        // 
-        var sortedNums = numbers.OrderBy(num => num);
-
-        // "Lazy Loading" //
-        int x = 0;
-        var array = numbers.Where(num => num > x);
-        // This defines the algorithm, but doesn't actually run anything. Just stores instructions.
-        x = 80;
-        total = array.Sum();
-        // This returns nothing because nothing in our numbers array is above 80.
 
     }
     static void TestDelegate()
     {
         WriteLine($"\n<----- Delegate Test ----->");
-        var name = "Bob Dust";
-        var firstName = name.Left(3);
-        var lastName = name.Right(4);
-        WriteLine($"Name: {name}\t\tFirstName: {firstName}\t\tLastName: {lastName}");
+            WriteLine();
 
-    }
+            DateTime startTime = new DateTime(2020, 10, 25, 10, 30, 00);
+            DateTime endTime = new DateTime(2020, 10, 28, 13, 20, 45);
+
+            Delegate.DateDifference diff = Delegate.Days;
+            int daysDiff = diff(startTime, endTime);
+            Console.WriteLine($"Days Difference: {daysDiff}");
+
+            diff = Delegate.Hours;
+            int hoursDiff = diff(startTime, endTime);
+            Console.WriteLine($"Hours Difference: {hoursDiff}");
+
+            diff = Delegate.Minutes;
+            int minsDiff = diff(startTime, endTime);
+            Console.WriteLine($"Minutes Difference: {minsDiff}");
+
+            //var name = "Bob Dust";
+            //var firstName = name.Left(3);
+            //var lastName = name.Right(4);
+            //WriteLine($"Name: {name}\t\tFirstName: {firstName}\t\tLastName: {lastName}");
+
+        }
     static void TestExtension()
     {
         Int2String zip = Zipper;
         WriteLine($"\n<----- Extension Test ----->\nint\tZip Code");
-        int zipNum = 1;
+            int zipNum = 1;
         Display(zipNum, zip); zipNum += 10;
         Display(zipNum, zip); zipNum += 100;
         Display(zipNum, zip); zipNum += 1000;
@@ -133,8 +99,9 @@ namespace EDI
     private static void TestInterface()
     {
         WriteLine($"\n<----- Interface Test ----->");
+            WriteLine();
 #if stub
-            IShape square = new Square(10,5);
+            IShape square = new Square(10);
             Display(square);
 #endif
     }
@@ -192,6 +159,9 @@ namespace EDI
         
         static void LinqExamples()
         {
+            WriteLine($"\n<----- LINQ Test ----->");
+            WriteLine();
+
             int[] numbers = { 5, 9, 20, 6, 3, 1, 14, 12, 18, 10 };
 
             double avg = numbers.Average();

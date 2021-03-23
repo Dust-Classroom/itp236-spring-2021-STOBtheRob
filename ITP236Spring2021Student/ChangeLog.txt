@@ -19,8 +19,8 @@ Spring 2021
 --< Submitted Assignment 6 March 2nd, 2021 >--
 --< Assignment #6: Purchasing/ EF Part 3 >--
 
---< Began working on Assignment 7 March 3rd, 2021 >--
---< Assignment #7: Delegates, Extensions, Interfaces (WORK IN PROGRESS) >--
+--< Submitted Assignment 7 March 23rd, 2021 >--
+--< Assignment #7: Delegates, Extensions, Interfaces >--
 
 --< Submitted Assignment 8 March 10th, 2021 >--
 --< Assignment #8: LINQ Assignment #1 >--

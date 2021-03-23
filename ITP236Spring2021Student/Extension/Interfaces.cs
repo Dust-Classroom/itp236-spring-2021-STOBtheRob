@@ -9,7 +9,7 @@ namespace EDI
     public interface IShape
     {
         double Perimeter { get; set; }
-        double Shape { get; set; }
+        double Area { get; set; }
     }
 
     public class Square : IShape
