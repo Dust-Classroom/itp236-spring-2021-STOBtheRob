@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs">
+      <DependentUpon>SalesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerSummary.cs">
+      <DependentUpon>SalesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ITP236EF.cs" />
     <Compile Include="Part.cs">
       <DependentUpon>PurchasingModel.tt</DependentUpon>
@@ -86,6 +92,27 @@
     <Compile Include="Receipt.cs">
       <DependentUpon>PurchasingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SalesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrder.cs">
+      <DependentUpon>SalesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderPart.cs">
+      <DependentUpon>SalesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SatusIDEnum.cs">
       <DependentUpon>PurchasingModel.tt</DependentUpon>
     </Compile>
@@ -93,6 +120,7 @@
       <DependentUpon>PurchasingModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Test.cs" />
+    <Compile Include="TestSales.cs" />
     <Compile Include="Vendor.cs">
       <DependentUpon>PurchasingModel.tt</DependentUpon>
     </Compile>
@@ -110,6 +138,13 @@
     <None Include="PurchasingModel.edmx.diagram">
       <DependentUpon>PurchasingModel.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="SalesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SalesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SalesModel.edmx.diagram">
+      <DependentUpon>SalesModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -125,6 +160,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PurchasingModel.edmx</DependentUpon>
       <LastGenOutput>PurchasingModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="SalesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SalesModel.edmx</DependentUpon>
+      <LastGenOutput>SalesModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SalesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SalesModel.edmx</DependentUpon>
+      <LastGenOutput>SalesModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

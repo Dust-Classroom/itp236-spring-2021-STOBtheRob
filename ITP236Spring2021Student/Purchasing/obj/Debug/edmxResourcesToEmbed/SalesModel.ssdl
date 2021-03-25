@@ -9,6 +9,7 @@
     <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="City" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="State" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Balance" Type="money" />
   </EntityType>
   <EntityType Name="SalesOrder">
     <Key>
@@ -34,6 +35,16 @@
     <Property Name="ExtendedPrice" Type="money" />
     <Property Name="UnitCost" Type="money" />
     <Property Name="ExtendedCost" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ITP236-09.dbo.CustomerSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CustomerSummary">
+    <Key>
+      <PropertyRef Name="Customer" />
+    </Key>
+    <Property Name="Customer" Type="varchar" MaxLength="101" Nullable="false" />
+    <Property Name="TotalAmount" Type="money" />
+    <Property Name="Items" Type="int" />
   </EntityType>
   <Association Name="FK_SalesOrder_Customer">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
@@ -63,6 +74,13 @@
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SalesOrder" EntityType="Self.SalesOrder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SalesOrderPart" EntityType="Self.SalesOrderPart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerSummary" EntityType="Self.CustomerSummary" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CustomerSummary].[Customer] AS [Customer], 
+    [CustomerSummary].[TotalAmount] AS [TotalAmount], 
+    [CustomerSummary].[Items] AS [Items]
+    FROM [dbo].[CustomerSummary] AS [CustomerSummary]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_SalesOrder_Customer" Association="Self.FK_SalesOrder_Customer">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="SalesOrder" EntitySet="SalesOrder" />

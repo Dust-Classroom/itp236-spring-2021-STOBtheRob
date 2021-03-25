@@ -25,3 +25,6 @@ Spring 2021
 --< Submitted Assignment 8 March 10th, 2021 >--
 --< Assignment #8: LINQ Assignment #1 >--
 
+--< Submitted Assignment 9 March 24th, 2021 >--
+--< Assignment #9: LINQ Assignment #2 >--
+

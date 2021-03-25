@@ -74,11 +74,6 @@ namespace EDI
             int minsDiff = diff(startTime, endTime);
             Console.WriteLine($"Minutes Difference: {minsDiff}");
 
-            //var name = "Bob Dust";
-            //var firstName = name.Left(3);
-            //var lastName = name.Right(4);
-            //WriteLine($"Name: {name}\t\tFirstName: {firstName}\t\tLastName: {lastName}");
-
         }
     static void TestExtension()
     {

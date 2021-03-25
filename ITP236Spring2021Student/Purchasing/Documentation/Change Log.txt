@@ -9,3 +9,7 @@ Added Part, PurchaseOrderPart, Receipt, and Spoilage tables. Added "Fairy Dust" 
 Student: Robert Steele
 Last Changed 3/2/2021
 Used Views, Table-valued Functions, and Stored Procedures to view and update data on the tables. Saved Changes.
+
+Student: Robert Steele
+Last Changed 3/24/2021
+Wrote method Linq2, practiced using method and query syntaxes to calculate totals and display lists. Saved Changes.

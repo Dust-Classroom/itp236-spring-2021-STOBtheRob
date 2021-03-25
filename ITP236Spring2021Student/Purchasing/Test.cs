@@ -10,7 +10,7 @@
 #undef ViewSprocFunction
 #undef  EfAssignment3
 #undef  Linq1
-#undef  Linq2
+//#undef  Linq2
 #undef  Project
 using System;
 using System.Collections.Generic;
@@ -137,24 +137,95 @@ namespace Purchasing
         static void Linq2()
         {
 #if Linq2
-            WriteLine($"\n<----- Purchase Orders by Vendor ----->");
-            var pos = PurchaseOrder.ByVendor(21);
-            foreach (var po in pos)
-                Display(po);
+            string seperator = new string ('=', 40);
 
-            WriteLine($"\n<----- Parts > $70 ----->");
-            var parts = Part.PartsAbove(70m);
-            foreach (var p in parts)
-                Display(p);
+            using (var db = new PurchaserEntities())
+            {
+                Console.WriteLine($"Sum of Total Purchases:");
+                double totalPurchases = Convert.ToDouble(db.PurchaseOrders.Sum(pu => pu.Amount));
+                Console.WriteLine($"Method: {totalPurchases:c}");
+                totalPurchases = Convert.ToDouble((from pu in db.PurchaseOrders select pu.Amount).Sum());
+                Console.WriteLine($"Query: {totalPurchases:c}");
+                Console.WriteLine(seperator);
 
-            WriteLine($"\n<----- Parts With Highest QoH ----->");
-            var part = Part.HighestQoH();
-            Display(part);
 
-            WriteLine($"\n<----- Receipts Descending by Cost ----->");
-            var receipts = Receipt.ByCost();
-            foreach (var receipt in receipts)
-                Display(receipt);
+                Console.WriteLine($"Sorted Purchase Orders:");
+                var sortedPOs = db.PurchaseOrders.OrderByDescending(pu => pu.Amount).ToList();
+                Console.WriteLine($"Method: ");
+                Console.WriteLine($"ID#:\tDate:\t\t\tVendorID:");
+                foreach (var po in sortedPOs)
+                {
+                    Console.WriteLine($"{po.PurchaseOrderId}\t{po.PODate}\t{po.Amount:c}");
+                }
+                Console.WriteLine();
+
+                Console.WriteLine($"Query:");
+                Console.WriteLine($"ID#:\tDate:\t\t\tVendorID:");
+                sortedPOs = (from pu in db.PurchaseOrders orderby pu.Amount descending select pu).ToList();
+                foreach (var po in sortedPOs)
+                {
+                    Console.WriteLine($"{po.PurchaseOrderId}\t{po.PODate}\t{po.Amount:c}");
+                }
+                Console.WriteLine(seperator);
+
+
+                Console.WriteLine($"Anonymous Objects:");
+                Console.WriteLine($"Method:");
+                var anonyPOs = db.PurchaseOrders.Select(
+                    pu => new 
+                    { 
+                        pu.PurchaseOrderId, 
+                        vendor = pu.Vendor.Name, 
+                        pu.Amount, 
+                        pu.PurchaseOrderStatusID
+                    }
+                    ).ToList();
+                Console.WriteLine($"ID#:\tVendor:\t\tAmount:\t\tStatus:");
+                foreach (var pu in anonyPOs)
+                {
+                    Console.WriteLine($"{pu.PurchaseOrderId}\t{pu.vendor}\t{pu.Amount:c}\t{pu.PurchaseOrderStatusID}");
+
+                }
+
+                Console.WriteLine($"Query:");
+
+                anonyPOs = (from pu in db.PurchaseOrders let Vendor = pu.Vendor.Name select new
+                {
+                    pu.PurchaseOrderId,
+                    vendor = pu.Vendor.Name,
+                    pu.Amount,
+                    pu.PurchaseOrderStatusID
+                }
+                ).ToList();
+                Console.WriteLine($"ID#:\tVendor:\t\tAmount:\t\tStatus:");
+                foreach (var pu in anonyPOs)
+                {
+                    Console.WriteLine($"{pu.PurchaseOrderId}\t{pu.vendor}\t{pu.Amount:c}\t{pu.PurchaseOrderStatusID}");
+
+                }
+
+
+            }
+
+
+            //WriteLine($"\n<----- Purchase Orders by Vendor ----->");
+            //var pos = PurchaseOrder.ByVendor(21);
+            //foreach (var po in pos)
+            //    Display(po);
+
+            //WriteLine($"\n<----- Parts > $70 ----->");
+            //var parts = Part.PartsAbove(70m);
+            //foreach (var p in parts)
+            //    Display(p);
+
+            //WriteLine($"\n<----- Parts With Highest QoH ----->");
+            //var part = Part.HighestQoH();
+            //Display(part);
+
+            //WriteLine($"\n<----- Receipts Descending by Cost ----->");
+            //var receipts = Receipt.ByCost();
+            //foreach (var receipt in receipts)
+            //    Display(receipt);
 
 #endif
         }

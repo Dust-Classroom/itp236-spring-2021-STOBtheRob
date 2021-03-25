@@ -9,6 +9,7 @@
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="City" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="SalesOrders" Relationship="Self.FK_SalesOrder_Customer" FromRole="Customer" ToRole="SalesOrder" />
   </EntityType>
   <EntityType Name="SalesOrder">
@@ -39,6 +40,14 @@
     <Property Name="ExtendedCost" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="SalesOrder" Relationship="Self.FK_SalesOrderPart_SalesOrder" FromRole="SalesOrderPart" ToRole="SalesOrder" />
   </EntityType>
+  <EntityType Name="CustomerSummary">
+    <Key>
+      <PropertyRef Name="Customer" />
+    </Key>
+    <Property Name="Customer" Type="String" MaxLength="101" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Items" Type="Int32" />
+  </EntityType>
   <Association Name="FK_SalesOrder_Customer">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
     <End Role="SalesOrder" Type="Self.SalesOrder" Multiplicity="*" />
@@ -63,10 +72,11 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="PurchaseEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="SalesEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="SalesOrders" EntityType="Self.SalesOrder" />
     <EntitySet Name="SalesOrderParts" EntityType="Self.SalesOrderPart" />
+    <EntitySet Name="CustomerSummaries" EntityType="Self.CustomerSummary" />
     <AssociationSet Name="FK_SalesOrder_Customer" Association="Self.FK_SalesOrder_Customer">
       <End Role="Customer" EntitySet="Customers" />
       <End Role="SalesOrder" EntitySet="SalesOrders" />

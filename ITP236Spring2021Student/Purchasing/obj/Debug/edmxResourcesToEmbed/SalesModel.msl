@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SalesModelStoreContainer" CdmEntityContainer="PurchaseEntities">
+  <EntityContainerMapping StorageEntityContainer="SalesModelStoreContainer" CdmEntityContainer="SalesEntities">
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="SalesModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
@@ -9,6 +9,7 @@
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="City" ColumnName="City" />
           <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -36,6 +37,15 @@
           <ScalarProperty Name="ExtendedPrice" ColumnName="ExtendedPrice" />
           <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
           <ScalarProperty Name="ExtendedCost" ColumnName="ExtendedCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerSummaries">
+      <EntityTypeMapping TypeName="SalesModel.CustomerSummary">
+        <MappingFragment StoreEntitySet="CustomerSummary">
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="Items" ColumnName="Items" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -9,8 +9,8 @@
 #undef EmployeePay
 #undef Debugging
 #undef StateCollection
-#undef Purchasing
-//#undef EDI
+//#undef Purchasing
+#undef EDI
 #undef ETL
 
 using static System.Console;
@@ -45,6 +45,7 @@ namespace TestConsole
             #region Purchasing
 #if Purchasing
             Purchasing.PurchasingTest.Test();
+            //Purchasing.TestSales.Test();
 #endif
             #endregion
             #region EDI
@@ -57,7 +58,7 @@ namespace TestConsole
 #if ETL
             ETL.TestEtl.Test();
 #endif
-#endregion
+            #endregion
             ReadKey();
         }
     }
