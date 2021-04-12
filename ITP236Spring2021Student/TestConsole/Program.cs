@@ -45,6 +45,7 @@ namespace TestConsole
             #region Purchasing
 #if Purchasing
             Purchasing.PurchasingTest.Test();
+            //Purchasing.LinqProject
             //Purchasing.TestSales.Test();
 #endif
             #endregion

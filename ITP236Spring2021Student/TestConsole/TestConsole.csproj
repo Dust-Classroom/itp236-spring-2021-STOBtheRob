@@ -81,6 +81,10 @@
       <Project>{674efb0a-8cab-4a25-822d-5fc3f806bf73}</Project>
       <Name>EDI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LinqUI\LinqUI.csproj">
+      <Project>{d01da701-9e79-4b4d-9db3-3465dab254ca}</Project>
+      <Name>LinqUI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Purchasing\Purchasing.csproj">
       <Project>{cff403c6-d16d-4c5f-806c-e79e3d2e0600}</Project>
       <Name>Purchasing</Name>

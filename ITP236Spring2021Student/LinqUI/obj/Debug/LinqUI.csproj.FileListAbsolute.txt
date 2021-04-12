@@ -1,0 +1,15 @@
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\obj\Debug\LinqUI.csprojAssemblyReference.cache
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\obj\Debug\LinqUI.csproj.CoreCompileInputs.cache
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\LinqUI.exe.config
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\LinqUI.exe
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\LinqUI.pdb
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\EntityFramework.dll
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\Purchasing.dll
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\Purchasing.pdb
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\Purchasing.dll.config
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\EntityFramework.xml
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\obj\Debug\LinqUI.csproj.CopyComplete
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\obj\Debug\LinqUI.exe
+C:\Users\Bobby\Desktop\College\ITP 236 Spring 2021 Robert Steele\ITP236Spring2021Student\LinqUI\obj\Debug\LinqUI.pdb

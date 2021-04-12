@@ -25,6 +25,7 @@ namespace Purchasing
 
         static void LinqSales1(SalesEntities db)
         {
+            
             // -Sum-
             // Method Syntax
             var totalSales = db.SalesOrders.Sum(so => so.OrderTotal);
@@ -68,6 +69,39 @@ namespace Purchasing
                 Taxes = tax
             }
             ).ToList();
+
+            //// -Contains (Like a IN in SQL)- 
+            //var customerIds = db.Customers.Where(c = c.Balance > 100).Select(c => c.CustomerId);
+            //// Grabs customer ID #s with balance greater than 100.
+
+            //var selectedOrders = (from so in db.SalesOrders where customerIds.Contains(so.CustomerId) select so);
+            //// Iterates through selected ID numbers and shows Sales Orders for those Customer IDs
+
+            //// -Group By-
+            //var customerparts = (
+            //    from sop 
+            //    in db.SalesOrderParts 
+            //    group sop 
+            //    by sop.SalesOrder.CustomerId 
+            //    into sopGroup 
+            //    select new
+            //    {
+            //        CustomerId = sopGroup.Key,
+            //        SOPs = sopGroup,
+            //        Sales = sopGroup.Sum(sg => sg.Quanity * sg.UnitPrice)
+            //    }
+            //    ).ToList();
+
+            //var customerSales = (
+            //    from so in db.SalesOrders
+            //    group so by so.CustomerId into custGroup
+            //    select new
+            //    {
+            //        CustomerId = custGroup.Key,
+            //        Sales = custGroup.Sum(cg => cg.OrderTotal)
+            //    }
+            //    ).ToList();
+
 
         }
     }

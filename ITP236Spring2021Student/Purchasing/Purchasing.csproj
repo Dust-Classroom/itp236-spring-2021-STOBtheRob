@@ -92,6 +92,7 @@
     <Compile Include="Receipt.cs">
       <DependentUpon>PurchasingModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sales.cs" />
     <Compile Include="SalesModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

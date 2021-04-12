@@ -10,7 +10,7 @@
 #undef ViewSprocFunction
 #undef  EfAssignment3
 #undef  Linq1
-//#undef  Linq2
+#undef  Linq2
 #undef  Project
 using System;
 using System.Collections.Generic;
